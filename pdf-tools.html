@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#" class="active"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html" class="active"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+        <a href="pdf-tools.html" class="active"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-file-pdf"></i> PDF Tools</h1>
+            <p>Merge, split, compress, and convert PDF files with advanced options</p>
+        </div>
+    </section>
+    
+    <!-- PDF Tools -->
+    <section class="tool-container">
+        <div class="container">
+            <!-- PDF Tools Grid -->
+            <div class="pdf-tools-grid">
+                <a href="#merge" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <h3>Merge PDF</h3>
+                    <p>Combine multiple PDF files into one</p>
+                </a>
+                
+                <a href="#split" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Split PDF</h3>
+                    <p>Split PDF into multiple files</p>
+                </a>
+                
+                <a href="#compress" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce PDF file size</p>
+                </a>
+                
+                <a href="#convert" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Convert PDF</h3>
+                    <p>Convert to/from other formats</p>
+                </a>
+                
+                <a href="#edit" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Edit PDF</h3>
+                    <p>Add text, images, annotations</p>
+                </a>
+                
+                <a href="#protect" class="pdf-tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Protect PDF</h3>
+                    <p>Add password protection</p>
+                </a>
+            </div>
+            
+            <!-- Merge PDF Tool -->
+            <div class="pdf-tool-section" id="merge">
+                <h2><i class="fas fa-object-group"></i> Merge PDF Files</h2>
+                
+                <div class="upload-area">
+                    <div class="upload-zone" id="mergeUploadZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop PDF Files Here</h3>
+                        <p>Add multiple PDFs to merge into one file</p>
+                        <button class="btn secondary" onclick="document.getElementById('mergeFileInput').click()">
+                            <i class="fas fa-folder-open"></i> Add PDF Files
+                        </button>
+                        <input type="file" id="mergeFileInput" accept=".pdf" multiple>
+                        <div class="drag-indicator">Drop PDFs to merge</div>
+                    </div>
+                    
+                    <div class="pdf-list" id="mergePdfList">
+                        <!-- PDF files will be listed here -->
+                    </div>
+                    
+                    <div class="merge-controls">
+                        <button class="btn primary" id="mergePdfsBtn" disabled>
+                            <i class="fas fa-object-group"></i> Merge PDFs
+                        </button>
+                        <button class="btn secondary" id="clearMergeBtn">
+                            <i class="fas fa-trash"></i> Clear List
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compress PDF Tool -->
+            <div class="pdf-tool-section" id="compress">
+                <h2><i class="fas fa-compress-alt"></i> Compress PDF</h2>
+                
+                <div class="upload-area">
+                    <div class="upload-zone" id="compressUploadZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop PDF File Here</h3>
+                        <p>Reduce PDF file size while maintaining quality</p>
+                        <button class="btn secondary" onclick="document.getElementById('compressFileInput').click()">
+                            <i class="fas fa-folder-open"></i> Select PDF File
+                        </button>
+                        <input type="file" id="compressFileInput" accept=".pdf">
+                        <div class="drag-indicator">Drop PDF to compress</div>
+                    </div>
+                    
+                    <div class="compression-options">
+                        <h3>Compression Level</h3>
+                        <div class="compression-levels">
+                            <label class="compression-level">
+                                <input type="radio" name="compression" value="low" checked>
+                                <div class="level-content">
+                                    <strong>Low Compression</strong>
+                                    <small>Best quality, moderate size reduction</small>
+                                </div>
+                            </label>
+                            
+                            <label class="compression-level">
+                                <input type="radio" name="compression" value="medium">
+                                <div class="level-content">
+                                    <strong>Medium Compression</strong>
+                                    <small>Good balance of quality and size</small>
+                                </div>
+                            </label>
+                            
+                            <label class="compression-level">
+                                <input type="radio" name="compression" value="high">
+                                <div class="level-content">
+                                    <strong>High Compression</strong>
+                                    <small>Maximum size reduction</small>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn primary" id="compressPdfBtn" disabled>
+                                <i class="fas fa-compress-alt"></i> Compress PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Convert PDF Tool -->
+            <div class="pdf-tool-section" id="convert">
+                <h2><i class="fas fa-exchange-alt"></i> Convert PDF</h2>
+                
+                <div class="upload-area">
+                    <div class="upload-zone" id="convertUploadZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p>Convert PDF to other formats or other files to PDF</p>
+                        <button class="btn secondary" onclick="document.getElementById('convertFileInput').click()">
+                            <i class="fas fa-folder-open"></i> Select Files
+                        </button>
+                        <input type="file" id="convertFileInput" multiple>
+                        <div class="drag-indicator">Drop files to convert</div>
+                    </div>
+                    
+                    <div class="conversion-options">
+                        <h3>Conversion Options</h3>
+                        <div class="conversion-grid">
+                            <button class="conversion-option" data-from="pdf" data-to="docx">
+                                <i class="fas fa-file-word"></i>
+                                <span>PDF to Word</span>
+                            </button>
+                            
+                            <button class="conversion-option" data-from="pdf" data-to="jpg">
+                                <i class="fas fa-file-image"></i>
+                                <span>PDF to Images</span>
+                            </button>
+                            
+                            <button class="conversion-option" data-from="image" data-to="pdf">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Images to PDF</span>
+                            </button>
+                            
+                            <button class="conversion-option" data-from="docx" data-to="pdf">
+                                <i class="fas fa-file-word"></i>
+                                <span>Word to PDF</span>
+                            </button>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn primary" id="convertFilesBtn" disabled>
+                                <i class="fas fa-exchange-alt"></i> Convert Files
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="tool-features">
+        <div class="container">
+            <h2>PDF Tools Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-object-group"></i>
+                    <h3>Merge PDFs</h3>
+                    <p>Combine multiple PDF files into one document</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Split PDF</h3>
+                    <p>Split PDF by pages or extract specific pages</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-compress-alt"></i>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce PDF file size without quality loss</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure PDF</h3>
+                    <p>Add password protection and permissions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                            <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3>FileOptimizer Pro</h3>
+                            <p>Free online file optimization suite</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="file-converter.html">File Converter</a>
+                    <a href="image-resizer.html" class="active">Image Resizer</a>
+                    <a href="pdf-tools.html">PDF Tools</a>
+                    <a href="batch-process.html">Batch Processor</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FileOptimizer Pro. All rights reserved. <span class="version">v2.0</span></p>
+                <p class="footer-note">Made with <i class="fas fa-heart"></i> for the open web</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loadingText">Processing image...</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/drag-drop.js"></script>
+    <script src="js/image-resizer.js"></script>
+</body>
+</html>           

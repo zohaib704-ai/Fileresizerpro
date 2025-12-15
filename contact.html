@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+     
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-compress-alt"></i>
+                    <span>ImageResizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Process</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <!-- Same as index.html -->
+    </div>
+    
+    <!-- Contact Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for support, questions, or feedback</p>
+        </div>
+    </section>
+    
+    <!-- Contact Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-card">
+                <h2><i class="fas fa-comments"></i> We'd Love to Hear From You</h2>
+                <p>Whether you have questions about our tools, need technical support, or want to provide feedback, we're here to help.</p>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">
+                                <i class="fas fa-user"></i> Your Name *
+                            </label>
+                            <input type="text" id="contactName" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">
+                                <i class="fas fa-envelope"></i> Email Address *
+                            </label>
+                            <input type="email" id="contactEmail" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">
+                                <i class="fas fa-tag"></i> Subject *
+                            </label>
+                            <select id="contactSubject" required>
+                                <option value="">Select a subject</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="bug">Bug Report</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">
+                                <i class="fas fa-comment"></i> Message *
+                            </label>
+                            <textarea id="contactMessage" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="contactAgree" required>
+                            <label for="contactAgree">
+                                I agree to the <a href="privacy.html">Privacy Policy</a> and allow ImageResizer Pro to contact me.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn primary large">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email Support</h4>
+                            <p>support@imageresizerpro.com</p>
+                            <small>Response time: 24-48 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-question-circle"></i>
+                        <div class="contact-details">
+                            <h4>Help Center</h4>
+                            <p>Check our FAQ for quick answers</p>
+                            <a href="#faq" class="btn small secondary">View FAQ</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9 AM - 6 PM</p>
+                            <p>Saturday - Sunday: 10 AM - 4 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="faq" class="faq-section">
+                    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is ImageResizer Pro really free?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, ImageResizer Pro is completely free to use! We don't charge any fees, require registration, or place watermarks on your images. We believe in providing accessible tools for everyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Are my images stored on your servers?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, all image processing happens locally in your browser. Your images never leave your device and are not uploaded to any server. This ensures complete privacy and security for your files.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What image formats do you support?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We support all major image formats: JPEG, PNG, GIF, and WEBP. You can convert between these formats during the compression process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I use ImageResizer Pro on mobile?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our website is fully responsive and works perfectly on all devices including smartphones, tablets, and desktop computers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a file size limit?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we limit individual files to 10MB for optimal performance. Most smartphone photos are 2-5MB, so this covers the vast majority of use cases.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can businesses use ImageResizer Pro?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Many businesses use our tools for website optimization, product images, marketing materials, and social media content. We also offer enterprise solutions for larger needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ImageResizer Pro</h3>
+                    <p>Free online tools for image optimization and conversion.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="index.html">Image Resizer</a>
+                    <a href="batch-process.html">Batch Process</a>
+                    <a href="qr-scanner.html">QR Scanner</a>
+                    <a href="text-extractor.html">Text Extractor</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ImageResizer Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+     <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script>
+        // Contact Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            // FAQ Toggle
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle active class
+                    question.classList.toggle('active');
+                    answer.classList.toggle('active');
+                    
+                    // Toggle icon
+                    if (question.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Contact Form Submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const subject = document.getElementById('contactSubject').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    // Simple validation
+                    if (!name || !email || !subject || !message) {
+                        ImageResizerUtils.showError('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Show loading
+                    ImageResizerUtils.showLoading('Sending your message...');
+                    
+                    // Simulate form submission (in real app, this would be AJAX)
+                    setTimeout(() => {
+                        ImageResizerUtils.hideLoading();
+                        
+                        // Show success message
+                        ImageResizerUtils.showSuccess('Thank you for your message! We will get back to you within 24-48 hours.');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+    <script src="js/drag-drop.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

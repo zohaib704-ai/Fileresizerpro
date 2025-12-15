@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy</a>
+        <a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>All-in-One File Optimization Suite</h1>
+                <p class="subtitle">Convert, compress, resize, and optimize files with 100% privacy. No uploads, no registration, completely free.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#quick-start" class="btn primary large">
+                        <i class="fas fa-bolt"></i> Quick Start
+                    </a>
+                    <a href="file-converter.html" class="btn secondary large">
+                        <i class="fas fa-exchange-alt"></i> Convert Files
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">File Formats</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Privacy</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Free Usage</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Files/Batch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Start -->
+    <section class="quick-start" id="quick-start">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-bolt"></i> Quick Start</h2>
+            <p class="section-subtitle">Drag & drop files anywhere or choose a tool below</p>
+            
+            <div class="global-upload-zone">
+                <div class="upload-zone" id="globalUploadZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drop files anywhere on this page</h3>
+                    <p>We'll automatically route you to the right tool</p>
+                    <div class="file-types">
+                        <span class="file-type-tag">PDF</span>
+                        <span class="file-type-tag">DOC/DOCX</span>
+                        <span class="file-type-tag">JPG/PNG</span>
+                        <span class="file-type-tag">XLS/XLSX</span>
+                        <span class="file-type-tag">ZIP</span>
+                    </div>
+                    <input type="file" id="globalFileInput" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.gif,.webp,.zip,.rar,.7z">
+                    <div class="drag-indicator">Drop files to begin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tools Grid -->
+    <section class="tools-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-tools"></i> All Tools</h2>
+            <p class="section-subtitle">Choose from our comprehensive suite of file optimization tools</p>
+            
+            <div class="tools-grid">
+                <!-- File Converter -->
+                <a href="file-converter.html" class="tool-card">
+                    <div class="tool-icon primary">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>File Converter</h3>
+                        <p>Convert between PDF, Word, Excel, Images, and more formats</p>
+                        <div class="tool-tags">
+                            <span>PDF to Word</span>
+                            <span>Images to PDF</span>
+                            <span>Office Formats</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Image Resizer -->
+                <a href="image-resizer.html" class="tool-card">
+                    <div class="tool-icon success">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>Image Resizer</h3>
+                        <p>Resize, compress, and optimize images. Convert MB to KB</p>
+                        <div class="tool-tags">
+                            <span>Bulk Resize</span>
+                            <span>Quality Control</span>
+                            <span>Format Convert</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- PDF Tools -->
+                <a href="pdf-tools.html" class="tool-card">
+                    <div class="tool-icon warning">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>PDF Tools</h3>
+                        <p>Merge, split, compress, and convert PDF files</p>
+                        <div class="tool-tags">
+                            <span>PDF Merge</span>
+                            <span>PDF Split</span>
+                            <span>PDF Compress</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Batch Processor -->
+                <a href="batch-process.html" class="tool-card">
+                    <div class="tool-icon info">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>Batch Processor</h3>
+                        <p>Process 100+ files simultaneously with consistent settings</p>
+                        <div class="tool-tags">
+                            <span>100+ Files</span>
+                            <span>Smart Queues</span>
+                            <span>ZIP Export</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- QR Tools -->
+                <a href="qr-scanner.html" class="tool-card">
+                    <div class="tool-icon secondary">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>QR Tools</h3>
+                        <p>Scan QR codes from images/camera and generate custom QR codes</p>
+                        <div class="tool-tags">
+                            <span>QR Scanner</span>
+                            <span>QR Generator</span>
+                            <span>URL Safety</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Text Tools -->
+                <a href="text-extractor.html" class="tool-card">
+                    <div class="tool-icon accent">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>Text Tools</h3>
+                        <p>Extract text from images (OCR) and optimize text documents</p>
+                        <div class="tool-tags">
+                            <span>Image OCR</span>
+                            <span>Text Cleanup</span>
+                            <span>Format Convert</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Social Presets -->
+                <a href="social-presets.html" class="tool-card">
+                    <div class="tool-icon purple">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>Social Presets</h3>
+                        <p>Optimize images for all social media platforms with one click</p>
+                        <div class="tool-tags">
+                            <span>Instagram</span>
+                            <span>Facebook</span>
+                            <span>Twitter</span>
+                        </div>
+                    </div>
+                    <div class="tool-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-star"></i> Why Choose Us?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>All processing happens in your browser. Files never leave your device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized algorithms process files in seconds, even for batch operations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>No Limits</h3>
+                    <p>Process unlimited files with no watermarks, registration, or fees.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Ready</h3>
+                    <p>Works perfectly on all devices with responsive design.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Source</h3>
+                    <p>Built with modern web technologies. Transparent and trustworthy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi-slash"></i>
+                    </div>
+                    <h3>Works Offline</h3>
+                    <p>Works offline after first load. Perfect for sensitive documents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Supported Formats -->
+    <section class="formats-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> Supported Formats</h2>
+            
+            <div class="formats-tabs">
+                <button class="format-tab active" data-format="images">Images</button>
+                <button class="format-tab" data-format="documents">Documents</button>
+                <button class="format-tab" data-format="archives">Archives</button>
+                <button class="format-tab" data-format="others">Others</button>
+            </div>
+            
+            <div class="formats-content">
+                <div class="format-grid active" id="images-format">
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>JPG/JPEG</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>PNG</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>GIF</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>WEBP</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>BMP</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>SVG</span>
+                    </div>
+                </div>
+                
+                <div class="format-grid" id="documents-format">
+                    <div class="format-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDF</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-word"></i>
+                        <span>DOC/DOCX</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-excel"></i>
+                        <span>XLS/XLSX</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-powerpoint"></i>
+                        <span>PPT/PPTX</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>TXT</span>
+                    </div>
+                    <div class="format-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>RTF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Theme Modal -->
+<div class="theme-modal" id="themeModal">
+    <div class="theme-modal-content">
+        <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+        <div class="theme-options">
+            <button class="theme-option" data-theme="dark">
+                <div class="theme-preview dark"></div>
+                <span>Dark</span>
+            </button>
+            <button class="theme-option" data-theme="light">
+                <div class="theme-preview light"></div>
+                <span>Light</span>
+            </button>
+            <button class="theme-option" data-theme="blue">
+                <div class="theme-preview blue"></div>
+                <span>Blue</span>
+            </button>
+        </div>
+        <button class="btn secondary" id="closeThemeModal">Close</button>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                            <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3>FileOptimizer Pro</h3>
+                            <p>Free online file optimization suite</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">All-in-one solution for file conversion, compression, and optimization. 100% free and privacy-focused.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="file-converter.html">File Converter</a>
+                    <a href="image-resizer.html">Image Resizer</a>
+                    <a href="pdf-tools.html">PDF Tools</a>
+                    <a href="batch-process.html">Batch Processor</a>
+                    <a href="qr-scanner.html">QR Scanner</a>
+                    <a href="text-extractor.html">Text Extractor</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FileOptimizer Pro. All rights reserved. <span class="version">v2.0</span></p>
+                <p class="footer-note">Made with <i class="fas fa-heart"></i> for the open web</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loadingText">Processing...</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/drag-drop.js"></script>
+</body>
+</html>

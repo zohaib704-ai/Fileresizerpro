@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#" class="active"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html" class="active"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <!-- Same as index.html -->
+    </div>
+    
+    <!-- QR Scanner Header -->
+    <section class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-qrcode"></i> QR Code Scanner</h1>
+            <p>Scan QR codes from images or directly from your camera</p>
+        </div>
+    </section>
+    
+    <!-- QR Scanner Tool -->
+    <section class="qr-scanner-tool">
+        <div class="container">
+            <div class="tool-container">
+                <div class="qr-tabs">
+                    <button class="qr-tab active" data-tab="upload">
+                        <i class="fas fa-upload"></i> Upload Image
+                    </button>
+                    <button class="qr-tab" data-tab="camera">
+                        <i class="fas fa-camera"></i> Use Camera
+                    </button>
+                </div>
+                
+                <!-- Upload Tab -->
+                <div class="qr-tab-content active" id="uploadTab">
+                    <div class="upload-area">
+                        <div class="upload-zone" id="qrUploadZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drop QR code image here or click to browse</h3>
+                            <p>Supports JPG, PNG, GIF, WEBP</p>
+                            <input type="file" id="qrFileInput" accept="image/*">
+                            <button class="btn secondary" onclick="document.getElementById('qrFileInput').click()">
+                                <i class="fas fa-folder-open"></i> Select Image
+                            </button>
+                        </div>
+                        
+                        <div class="image-preview" id="qrImagePreview">
+                            <img id="qrPreviewImage" alt="QR code preview">
+                            <div class="preview-overlay" id="qrOverlay">
+                                <div class="qr-box" id="qrBox"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Camera Tab -->
+                <div class="qr-tab-content" id="cameraTab">
+                    <div class="camera-container">
+                        <div class="camera-view" id="cameraView">
+                            <video id="qrCameraVideo" autoplay playsinline></video>
+                            <canvas id="qrCameraCanvas" style="display: none;"></canvas>
+                            <div class="qr-scan-box"></div>
+                        </div>
+                        
+                        <div class="camera-controls">
+                            <button class="btn secondary" id="startCamera">
+                                <i class="fas fa-play"></i> Start Camera
+                            </button>
+                            <button class="btn primary" id="stopCamera" disabled>
+                                <i class="fas fa-stop"></i> Stop Camera
+                            </button>
+                            <button class="btn success" id="captureQr" disabled>
+                                <i class="fas fa-camera"></i> Capture & Scan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scan Results -->
+                <div class="qr-results" id="qrResults">
+                    <h2><i class="fas fa-search"></i> Scan Results</h2>
+                    
+                    <div class="result-section">
+                        <div class="result-type">
+                            <i class="fas fa-link"></i>
+                            <h3>Detected Content</h3>
+                        </div>
+                        <div class="result-content">
+                            <textarea id="qrContent" readonly placeholder="QR code content will appear here..."></textarea>
+                            <div class="result-actions">
+                                <button class="btn small" id="copyQrContent">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                                <button class="btn small secondary" id="clearQrResults">
+                                    <i class="fas fa-trash"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-section">
+                        <div class="result-type">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>QR Code Information</h3>
+                        </div>
+                        <div class="qr-info-grid" id="qrInfo">
+                            <div class="info-item">
+                                <span class="info-label">Type:</span>
+                                <span class="info-value" id="qrType">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Size:</span>
+                                <span class="info-value" id="qrSize">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Position:</span>
+                                <span class="info-value" id="qrPosition">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Scan Time:</span>
+                                <span class="info-value" id="qrScanTime">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- URL Actions -->
+                    <div class="result-section" id="urlActions" style="display: none;">
+                        <div class="result-type">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h3>URL Actions</h3>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn primary" id="openUrl">
+                                <i class="fas fa-external-link-alt"></i> Open URL
+                            </button>
+                            <button class="btn secondary" id="testUrlSafety">
+                                <i class="fas fa-shield-alt"></i> Check Safety
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Text Actions -->
+                    <div class="result-section" id="textActions" style="display: none;">
+                        <div class="result-type">
+                            <i class="fas fa-font"></i>
+                            <h3>Text Actions</h3>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn primary" id="saveAsText">
+                                <i class="fas fa-save"></i> Save as .txt
+                            </button>
+                            <button class="btn secondary" id="translateText">
+                                <i class="fas fa-language"></i> Translate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QR Code Generator -->
+                <div class="qr-generator">
+                    <h2><i class="fas fa-plus-circle"></i> Create QR Code</h2>
+                    <div class="generator-form">
+                        <div class="form-group">
+                            <label for="qrText">
+                                <i class="fas fa-pen"></i> Text or URL
+                            </label>
+                            <textarea id="qrText" placeholder="Enter text or URL to encode..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="qrSizeSelect">
+                                <i class="fas fa-expand-alt"></i> Size
+                            </label>
+                            <select id="qrSizeSelect">
+                                <option value="128">128x128 (Small)</option>
+                                <option value="256" selected>256x256 (Medium)</option>
+                                <option value="512">512x512 (Large)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="qrColor">
+                                <i class="fas fa-palette"></i> Color
+                            </label>
+                            <input type="color" id="qrColor" value="#000000">
+                        </div>
+                        
+                        <button class="btn primary" id="generateQr">
+                            <i class="fas fa-qrcode"></i> Generate QR Code
+                        </button>
+                    </div>
+                    
+                    <div class="generator-output" id="qrOutput">
+                        <div class="generated-qr" id="generatedQr">
+                            <!-- QR code will be generated here -->
+                        </div>
+                        <div class="download-options">
+                            <button class="btn small" id="downloadQrPng">
+                                <i class="fas fa-download"></i> PNG
+                            </button>
+                            <button class="btn small secondary" id="downloadQrSvg">
+                                <i class="fas fa-download"></i> SVG
+                            </button>
+                            <button class="btn small success" id="copyQrImage">
+                                <i class="fas fa-copy"></i> Copy Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="tool-features">
+        <div class="container">
+            <h2>QR Scanner Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Live Camera Scan</h3>
+                    <p>Scan QR codes in real-time using your device camera</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-image"></i>
+                    <h3>Image Upload</h3>
+                    <p>Upload images containing QR codes from your device</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>QR Generator</h3>
+                    <p>Create custom QR codes with different colors and sizes</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>URL Safety Check</h3>
+                    <p>Check if URLs from QR codes are safe to open</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ImageResizer Pro</h3>
+                    <p>Free online tools for image optimization and conversion.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="index.html">Image Resizer</a>
+                    <a href="batch-process.html">Batch Process</a>
+                    <a href="qr-scanner.html" class="active">QR Scanner</a>
+                    <a href="text-extractor.html">Text Extractor</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ImageResizer Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/qr-scanner.js"></script>
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</body>
+</html>

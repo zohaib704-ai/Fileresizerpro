@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#" class="active"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html" class="active"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <!-- Same as index.html -->
+    </div>
+    
+    <!-- Social Presets Header -->
+    <section class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-thumbs-up"></i> Social Media Presets</h1>
+            <p>Optimize images for all social media platforms with one click</p>
+        </div>
+    </section>
+    
+    <!-- Social Presets Tool -->
+    <section class="social-presets-tool">
+        <div class="container">
+            <div class="tool-container">
+                <!-- Upload Area -->
+                <div class="upload-area">
+                    <div class="upload-zone" id="socialUploadZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload your image</h3>
+                        <p>Choose an image to resize for social media</p>
+                        <input type="file" id="socialFileInput" accept="image/*">
+                        <button class="btn secondary" onclick="document.getElementById('socialFileInput').click()">
+                            <i class="fas fa-folder-open"></i> Select Image
+                        </button>
+                    </div>
+                    
+                    <div class="image-preview" id="socialImagePreview">
+                        <img id="socialPreviewImage" alt="Image preview">
+                        <div class="crop-overlay">
+                            <div class="crop-area" id="cropArea"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preset Categories -->
+                <div class="preset-categories">
+                    <div class="preset-category active" data-category="all">
+                        <i class="fas fa-globe"></i> All Platforms
+                    </div>
+                    <div class="preset-category" data-category="facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </div>
+                    <div class="preset-category" data-category="instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </div>
+                    <div class="preset-category" data-category="twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </div>
+                    <div class="preset-category" data-category="linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </div>
+                    <div class="preset-category" data-category="pinterest">
+                        <i class="fab fa-pinterest"></i> Pinterest
+                    </div>
+                    <div class="preset-category" data-category="tiktok">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </div>
+                    <div class="preset-category" data-category="youtube">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </div>
+                </div>
+                
+                <!-- Presets Grid -->
+                <div class="presets-grid" id="presetsGrid">
+                    <!-- Presets will be loaded here -->
+                </div>
+                
+                <!-- Custom Size -->
+                <div class="custom-size">
+                    <h2><i class="fas fa-ruler-combined"></i> Custom Size</h2>
+                    <p>Or specify your own dimensions:</p>
+                    
+                    <div class="custom-size-inputs">
+                        <div class="form-group">
+                            <label for="customWidth">
+                                <i class="fas fa-arrows-alt-h"></i> Width (px)
+                            </label>
+                            <input type="number" id="customWidth" placeholder="Width">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customHeight">
+                                <i class="fas fa-arrows-alt-v"></i> Height (px)
+                            </label>
+                            <input type="number" id="customHeight" placeholder="Height">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customName">
+                                <i class="fas fa-tag"></i> Preset Name
+                            </label>
+                            <input type="text" id="customName" placeholder="My Custom Size">
+                        </div>
+                    </div>
+                    
+                    <div class="ratio-presets">
+                        <span>Aspect Ratios:</span>
+                        <button class="ratio-btn" data-ratio="1:1">1:1 (Square)</button>
+                        <button class="ratio-btn" data-ratio="16:9">16:9 (Widescreen)</button>
+                        <button class="ratio-btn" data-ratio="4:5">4:5 (Portrait)</button>
+                        <button class="ratio-btn" data-ratio="9:16">9:16 (Story)</button>
+                        <button class="ratio-btn" data-ratio="2.35:1">2.35:1 (Cinematic)</button>
+                    </div>
+                    
+                    <button class="btn secondary" id="addCustomPreset">
+                        <i class="fas fa-plus"></i> Add Custom Preset
+                    </button>
+                </div>
+                
+                <!-- Batch Processing -->
+                <div class="batch-social">
+                    <h2><i class="fas fa-layer-group"></i> Batch Process for Social Media</h2>
+                    <p>Generate multiple sizes for different platforms at once:</p>
+                    
+                    <div class="batch-options">
+                        <div class="batch-presets" id="batchPresets">
+                            <!-- Selected presets for batch will appear here -->
+                        </div>
+                        
+                        <div class="batch-actions">
+                            <button class="btn primary" id="processBatchSocial">
+                                <i class="fas fa-play"></i> Generate All Sizes
+                            </button>
+                            <button class="btn secondary" id="clearBatchSelection">
+                                <i class="fas fa-trash"></i> Clear Selection
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results -->
+                <div class="social-results" id="socialResults">
+                    <h2><i class="fas fa-images"></i> Generated Images</h2>
+                    <div class="results-grid" id="socialResultsGrid">
+                        <!-- Generated images will appear here -->
+                    </div>
+                    
+                    <div class="download-options">
+                        <button class="btn success" id="downloadAllSocial">
+                            <i class="fas fa-file-archive"></i> Download All as ZIP
+                        </button>
+                        <button class="btn secondary" id="downloadIndividualSocial">
+                            <i class="fas fa-download"></i> Download Individual
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="tool-features">
+        <div class="container">
+            <h2>Why Use Social Media Presets?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>One-Click Optimization</h3>
+                    <p>Resize images for any platform with a single click</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile-First</h3>
+                    <p>All presets optimized for mobile viewing</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Batch Processing</h3>
+                    <p>Generate multiple sizes simultaneously</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-save"></i>
+                    <h3>Save Presets</h3>
+                    <p>Create and save your custom size presets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ImageResizer Pro</h3>
+                    <p>Free online tools for image optimization and conversion.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="index.html">Image Resizer</a>
+                    <a href="batch-process.html">Batch Process</a>
+                    <a href="qr-scanner.html">QR Scanner</a>
+                    <a href="text-extractor.html">Text Extractor</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ImageResizer Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js "></script>
+    <script src="js/social-presets.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#" class="active"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html" class="active"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+        <a href="image-resizer.html" class="active"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-compress-alt"></i> Image Resizer</h1>
+            <p>Resize, compress, and optimize images. Convert MB to KB without quality loss</p>
+        </div>
+    </section>
+    
+    <!-- Image Resizer Tool -->
+    <section class="tool-container">
+        <div class="container">
+            <!-- Upload Area -->
+            <div class="upload-area">
+                <div class="upload-zone" id="imageUploadZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Images Here</h3>
+                    <p>Or click to browse. Supports JPG, PNG, GIF, WEBP, BMP</p>
+                    <button class="btn secondary" onclick="document.getElementById('imageFileInput').click()">
+                        <i class="fas fa-folder-open"></i> Browse Images
+                    </button>
+                    <input type="file" id="imageFileInput" accept="image/*" multiple>
+                    <div class="drag-indicator">Drop images to resize</div>
+                </div>
+                
+                <div class="image-preview" id="imagePreview">
+                    <div class="no-preview">
+                        <i class="fas fa-image"></i>
+                        <p>No image selected</p>
+                    </div>
+                    <img id="previewImage" alt="Image preview" style="display: none;">
+                </div>
+                
+                <div class="image-info" id="imageInfo">
+                    <div class="info-item">
+                        <i class="fas fa-weight-hanging"></i>
+                        <span>Size: <span id="imageSize">-</span></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Dimensions: <span id="imageDimensions">-</span></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-file-image"></i>
+                        <span>Format: <span id="imageFormat">-</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Resize Options -->
+            <div class="resize-options">
+                <h2><i class="fas fa-sliders-h"></i> Resize & Compress Settings</h2>
+                
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label for="qualitySlider">
+                            <i class="fas fa-tachometer-alt"></i> Quality: <span id="qualityValue">80%</span>
+                        </label>
+                        <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                        <div class="slider-labels">
+                            <span>Smaller</span>
+                            <span>Larger</span>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="widthInput">
+                            <i class="fas fa-arrows-alt-h"></i> Width (px)
+                        </label>
+                        <input type="number" id="widthInput" placeholder="Auto">
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="heightInput">
+                            <i class="fas fa-arrows-alt-v"></i> Height (px)
+                        </label>
+                        <input type="number" id="heightInput" placeholder="Auto">
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="sizeTarget">
+                            <i class="fas fa-bullseye"></i> Target Size
+                        </label>
+                        <select id="sizeTarget">
+                            <option value="">Custom</option>
+                            <option value="100">100 KB</option>
+                            <option value="500">500 KB</option>
+                            <option value="1000">1 MB</option>
+                            <option value="2000">2 MB</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="formatSelect">
+                            <i class="fas fa-file-export"></i> Output Format
+                        </label>
+                        <select id="formatSelect">
+                            <option value="jpeg">JPEG (Best compression)</option>
+                            <option value="webp">WEBP (Modern format)</option>
+                            <option value="png">PNG (Lossless)</option>
+                            <option value="original">Keep Original</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="maintainAspect" checked>
+                        <label for="maintainAspect">
+                            <i class="fas fa-link"></i> Maintain Aspect Ratio
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="preserveMetadata">
+                        <label for="preserveMetadata">
+                            <i class="fas fa-info-circle"></i> Preserve Metadata
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Preset Sizes -->
+                <div class="preset-sizes">
+                    <h3><i class="fas fa-th"></i> Common Sizes</h3>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-width="1920" data-height="1080">HD (1920×1080)</button>
+                        <button class="size-btn" data-width="1280" data-height="720">720p (1280×720)</button>
+                        <button class="size-btn" data-width="1080" data-height="1080">Instagram (1080×1080)</button>
+                        <button class="size-btn" data-width="1200" data-height="630">Facebook (1200×630)</button>
+                        <button class="size-btn" data-width="150" data-height="150">Thumbnail (150×150)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn primary large" id="processImageBtn" disabled>
+                    <i class="fas fa-compress-alt"></i> Resize & Compress Image
+                </button>
+                <button class="btn secondary" id="resetImageBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2><i class="fas fa-chart-line"></i> Compression Results</h2>
+                
+                <div class="results-comparison">
+                    <div class="result-card">
+                        <h3><i class="fas fa-file-upload"></i> Original</h3>
+                        <img id="originalImage" class="result-image" alt="Original image">
+                        <div class="result-info">
+                            <p><i class="fas fa-weight-hanging"></i> Size: <span id="originalSize">-</span></p>
+                            <p><i class="fas fa-expand-alt"></i> Dimensions: <span id="originalDimensions">-</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3><i class="fas fa-file-download"></i> Optimized</h3>
+                        <img id="compressedImage" class="result-image" alt="Compressed image">
+                        <div class="result-info">
+                            <p><i class="fas fa-weight-hanging"></i> Size: <span id="compressedSize">-</span></p>
+                            <p><i class="fas fa-expand-alt"></i> Dimensions: <span id="compressedDimensions">-</span></p>
+                            <p class="reduction"><i class="fas fa-arrow-down"></i> Reduction: <span id="reductionPercent">-</span></p>
+                        </div>
+                        <button class="btn success" id="downloadImageBtn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="compression-stats" id="compressionStats">
+                    <!-- Compression statistics will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="tool-features">
+        <div class="container">
+            <h2>Image Resizer Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-compress-alt"></i>
+                    <h3>Smart Compression</h3>
+                    <p>Reduce file size while maintaining visual quality</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-expand-alt"></i>
+                    <h3>Batch Resize</h3>
+                    <p>Resize multiple images at once with same settings</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-export"></i>
+                    <h3>Format Convert</h3>
+                    <p>Convert between JPG, PNG, WEBP, and other formats</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Optimized</h3>
+                    <p>Perfect sizes for websites and mobile apps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                            <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3>FileOptimizer Pro</h3>
+                            <p>Free online file optimization suite</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="file-converter.html">File Converter</a>
+                    <a href="image-resizer.html" class="active">Image Resizer</a>
+                    <a href="pdf-tools.html">PDF Tools</a>
+                    <a href="batch-process.html">Batch Processor</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FileOptimizer Pro. All rights reserved. <span class="version">v2.0</span></p>
+                <p class="footer-note">Made with <i class="fas fa-heart"></i> for the open web</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loadingText">Processing image...</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/drag-drop.js"></script>
+    <script src="js/image-resizer.js"></script>
+</body>
+</html>

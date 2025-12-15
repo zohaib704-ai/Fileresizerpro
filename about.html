@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileOptimizer Pro - All-in-One File Converter & Optimizer</title>
+    <meta name="description" content="Free online file converter, compressor, and optimizer. Convert PDF, Word, Excel, Images, resize, compress with privacy-first processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- <link rel="stylesheet" href="css/themes/light.css"> -->
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html" class="active"><i class="fas fa-envelope"></i> About</a>
+                <div class="dropdown">
+                    <a href="#"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <!-- Copy mobile menu from index.html -->
+    </div>
+    
+    <!-- About Content -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About ImageResizer Pro</h1>
+            <p>Learn about our mission, vision, and the team behind the tool</p>
+        </div>
+    </section>
+    
+    <section class="page-content">
+        <div class="container">
+            <div class="content-card">
+                <h2><i class="fas fa-rocket"></i> Our Mission</h2>
+                <p>ImageResizer Pro was founded with a simple mission: to make image optimization accessible to everyone. We believe that everyone should have access to tools that help them work smarter, not harder.</p>
+                
+                <h2><i class="fas fa-eye"></i> Our Vision</h2>
+                <p>We envision a world where digital content creation is seamless and efficient. By providing free, accessible tools, we aim to empower creators, businesses, and individuals to share their stories without technical barriers.</p>
+                
+                <h2><i class="fas fa-history"></i> Our Story</h2>
+                <p>Founded in 2024, ImageResizer Pro started as a simple project to solve a common problem: large image files that slow down websites and fill up storage. What began as a basic compression tool has grown into a comprehensive suite of image optimization tools.</p>
+                
+                <h2><i class="fas fa-shield-alt"></i> Our Commitment to Privacy</h2>
+                <p>Unlike many online tools, we process all images locally in your browser. This means:</p>
+                <div class="notice success" style="margin: 2rem 0; padding: 1.5rem; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px;">
+    <i class="fas fa-shield-alt" style="font-size: 2rem; color: #28a745; float: left; margin-right: 1rem;"></i>
+    <div style="overflow: hidden;">
+        <h4 style="margin-top: 0; color: #155724;">Enhanced Privacy with Client-Side Processing</h4>
+        <p style="color: #155724; margin-bottom: 0;">
+            All file conversions and batch processing (up to 100 files) happen entirely in your browser. 
+            Your documents and images never leave your device, ensuring complete privacy and security.
+        </p>
+    </div>
+</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Your images never leave your device</li>
+                    <li><i class="fas fa-check-circle"></i> No server uploads required</li>
+                    <li><i class="fas fa-check-circle"></i> Complete data privacy</li>
+                    <li><i class="fas fa-check-circle"></i> No registration or account needed</li>
+                </ul>
+                
+                <h2><i class="fas fa-tools"></i> Our Technology</h2>
+                <p>We use modern web technologies to deliver a fast, reliable experience:</p>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5 Canvas</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-camera"></i>
+                        <span>WebRTC</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>Browser Storage</span>
+                    </div>
+                </div>
+                
+                <h2><i class="fas fa-users"></i> Who We Serve</h2>
+                <div class="user-grid">
+                    <div class="user-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Students</h3>
+                        <p>For projects, presentations, and assignments</p>
+                    </div>
+                    <div class="user-card">
+                        <i class="fas fa-blog"></i>
+                        <h3>Bloggers</h3>
+                        <p>Optimize images for faster website loading</p>
+                    </div>
+                    <div class="user-card">
+                        <i class="fas fa-store"></i>
+                        <h3>Businesses</h3>
+                        <p>Product images, marketing materials, documents</p>
+                    </div>
+                    <div class="user-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Social Media Users</h3>
+                        <p>Perfect images for Instagram, Facebook, Twitter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+         <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                            <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3>FileOptimizer Pro</h3>
+                            <p>Free online file optimization suite</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">All-in-one solution for file conversion, compression, and optimization. 100% free and privacy-focused.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="file-converter.html">File Converter</a>
+                    <a href="image-resizer.html">Image Resizer</a>
+                    <a href="pdf-tools.html">PDF Tools</a>
+                    <a href="batch-process.html">Batch Processor</a>
+                    <a href="qr-scanner.html">QR Scanner</a>
+                    <a href="text-extractor.html">Text Extractor</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FileOptimizer Pro. All rights reserved. <span class="version">v2.0</span></p>
+                <p class="footer-note">Made with <i class="fas fa-heart"></i> for the open web</p>
+            </div>
+        </div>
+    </footer>
+    
+
+     <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+   
+</body>
+</html>

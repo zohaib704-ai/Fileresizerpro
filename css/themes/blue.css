@@ -1,0 +1,40 @@
+/* ===== BLUE THEME ===== */
+:root {
+    /* Primary Colors */
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+    
+    /* Background Colors */
+    --bg-primary: #0c4a6e;
+    --bg-secondary: #0369a1;
+    --bg-card: #1e40af;
+    --bg-input: #1e3a8a;
+    --overlay-bg: rgba(12, 74, 110, 0.95);
+    
+    /* Text Colors */
+    --text-primary: #f0f9ff;
+    --text-secondary: #bae6fd;
+    --text-muted: #7dd3fc;
+    --text-dark: #0c4a6e;
+    
+    /* Status Colors */
+    --success: #10b981;
+    --success-dark: #059669;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --info: #0ea5e9;
+    
+    /* Border & Shadow */
+    --border: #1e3a8a;
+    --border-light: #1d4ed8;
+    --shadow-sm: 0 1px 3px 0 rgba(30, 64, 175, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(30, 64, 175, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(30, 64, 175, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(30, 64, 175, 0.3);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}

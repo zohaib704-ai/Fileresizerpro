@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Extractor - FileOptimizer Pro</title>
+    <meta name="description" content="Extract text from images, PDFs, and documents using OCR technology. 100% client-side processing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Theme CSS (dark by default) -->
+    <link rel="stylesheet" href="css/themes/dark.css" id="theme-style">
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/drag-drop.css">
+    
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" title="Change Theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <svg width="32" height="32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M60 60H120V80H60V60Z" fill="var(--text-primary)"/>
+                        <path d="M60 80H140V140H60V80Z" fill="var(--bg-card)"/>
+                        <path d="M120 60V80H140L120 60Z" fill="var(--border)"/>
+                        <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                    <span>FileOptimizer Pro</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <div class="dropdown">
+                    <a href="#" class="active"><i class="fas fa-tools"></i> Tools <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+                        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+                        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+                        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+                        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+                        <a href="text-extractor.html" class="active"><i class="fas fa-font"></i> Text Extractor</a>
+                        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+                    </div>
+                </div>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="file-converter.html"><i class="fas fa-exchange-alt"></i> File Converter</a>
+        <a href="image-resizer.html"><i class="fas fa-compress-alt"></i> Image Resizer</a>
+        <a href="pdf-tools.html"><i class="fas fa-file-pdf"></i> PDF Tools</a>
+        <a href="batch-process.html"><i class="fas fa-layer-group"></i> Batch Processor</a>
+        <a href="qr-scanner.html"><i class="fas fa-qrcode"></i> QR Scanner</a>
+        <a href="text-extractor.html" class="active"><i class="fas fa-font"></i> Text Extractor</a>
+        <a href="social-presets.html"><i class="fas fa-thumbs-up"></i> Social Presets</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-font"></i> Text Extractor (OCR)</h1>
+            <p>Extract text from images, PDFs, and documents using advanced OCR technology</p>
+        </div>
+    </section>
+    
+    <!-- Text Extractor Tool -->
+    <section class="tool-container">
+        <div class="container">
+            <!-- Upload Area -->
+            <div class="upload-area">
+                <div class="upload-zone" id="textExtractorUploadZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Files Here</h3>
+                    <p>Upload images, PDFs, or documents to extract text</p>
+                    <button class="btn secondary" onclick="document.getElementById('textExtractorFileInput').click()">
+                        <i class="fas fa-folder-open"></i> Browse Files
+                    </button>
+                    <input type="file" id="textExtractorFileInput" accept=".pdf,.jpg,.jpeg,.png,.gif,.bmp,.tiff,.webp">
+                    <div class="drag-indicator">Drop files to extract text</div>
+                </div>
+                
+                <div class="file-preview-container" id="filePreviewContainer">
+                    <!-- Files will be previewed here -->
+                </div>
+            </div>
+            
+            <!-- OCR Options -->
+            <div class="ocr-options">
+                <h2><i class="fas fa-cogs"></i> OCR Settings</h2>
+                
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label for="languageSelect">
+                            <i class="fas fa-language"></i> Language
+                        </label>
+                        <select id="languageSelect">
+                            <option value="eng">English</option>
+                            <option value="spa">Spanish</option>
+                            <option value="fra">French</option>
+                            <option value="deu">German</option>
+                            <option value="ita">Italian</option>
+                            <option value="por">Portuguese</option>
+                            <option value="rus">Russian</option>
+                            <option value="chi_sim">Chinese (Simplified)</option>
+                            <option value="jpn">Japanese</option>
+                            <option value="kor">Korean</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="ocrEngine">
+                            <i class="fas fa-microchip"></i> OCR Engine
+                        </label>
+                        <select id="ocrEngine">
+                            <option value="standard">Standard (Balanced)</option>
+                            <option value="fast">Fast (Lower accuracy)</option>
+                            <option value="accurate">Accurate (Slower)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="preserveFormatting" checked>
+                        <label for="preserveFormatting">
+                            <i class="fas fa-align-left"></i> Preserve text formatting
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="detectTables" checked>
+                        <label for="detectTables">
+                            <i class="fas fa-table"></i> Detect tables
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="detectLists" checked>
+                        <label for="detectLists">
+                            <i class="fas fa-list"></i> Detect lists
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group checkbox">
+                        <input type="checkbox" id="ignoreImages">
+                        <label for="ignoreImages">
+                            <i class="fas fa-ban"></i> Ignore embedded images
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn primary large" id="extractTextBtn" disabled>
+                    <i class="fas fa-search"></i> Extract Text
+                </button>
+                <button class="btn secondary" id="clearTextBtn">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2><i class="fas fa-file-alt"></i> Extracted Text</h2>
+                
+                <div class="extracted-text-container">
+                    <div class="text-controls">
+                        <button class="btn small" id="copyTextBtn">
+                            <i class="fas fa-copy"></i> Copy Text
+                        </button>
+                        <button class="btn small" id="downloadTextBtn">
+                            <i class="fas fa-download"></i> Download as TXT
+                        </button>
+                        <button class="btn small" id="clearTextBtn2">
+                            <i class="fas fa-eraser"></i> Clear Text
+                        </button>
+                    </div>
+                    
+                    <div class="text-stats">
+                        <div class="stat">
+                            <i class="fas fa-font"></i>
+                            <span>Characters: <span id="charCount">0</span></span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-paragraph"></i>
+                            <span>Words: <span id="wordCount">0</span></span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-align-left"></i>
+                            <span>Lines: <span id="lineCount">0</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-output">
+                        <textarea id="extractedText" readonly placeholder="Extracted text will appear here..."></textarea>
+                    </div>
+                    
+                    <div class="text-formatting">
+                        <button class="format-btn" data-action="capitalize">
+                            <i class="fas fa-text-height"></i> Capitalize
+                        </button>
+                        <button class="format-btn" data-action="lowercase">
+                            <i class="fas fa-text-height"></i> Lowercase
+                        </button>
+                        <button class="format-btn" data-action="trim">
+                            <i class="fas fa-cut"></i> Trim Spaces
+                        </button>
+                        <button class="format-btn" data-action="removeDuplicates">
+                            <i class="fas fa-backspace"></i> Remove Duplicates
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Original vs Extracted Preview -->
+                <div class="comparison-preview">
+                    <div class="comparison-column">
+                        <h3><i class="fas fa-image"></i> Original</h3>
+                        <div class="original-preview" id="originalPreview">
+                            <img id="originalImage" alt="Original file preview">
+                        </div>
+                    </div>
+                    <div class="comparison-column">
+                        <h3><i class="fas fa-file-alt"></i> Extracted Text</h3>
+                        <div class="text-preview" id="textPreview">
+                            <p id="previewText">Text preview will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="tool-features">
+        <div class="container">
+            <h2>Text Extractor Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-image"></i>
+                    <h3>Image to Text</h3>
+                    <p>Extract text from screenshots, photos, and scanned documents</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>PDF to Text</h3>
+                    <p>Convert PDF documents to editable text format</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Multi-language</h3>
+                    <p>Support for 20+ languages including Asian scripts</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Processing</h3>
+                    <p>Process documents quickly with optimized algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="var(--primary)" opacity="0.1"/>
+                            <path d="M80 100L100 80L120 100" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M100 80V120" stroke="var(--primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <h3>FileOptimizer Pro</h3>
+                            <p>Free online file optimization suite</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <a href="file-converter.html">File Converter</a>
+                    <a href="image-resizer.html">Image Resizer</a>
+                    <a href="pdf-tools.html">PDF Tools</a>
+                    <a href="batch-process.html">Batch Processor</a>
+                    <a href="text-extractor.html" class="active">Text Extractor</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FileOptimizer Pro. All rights reserved. <span class="version">v2.0</span></p>
+                <p class="footer-note">Made with <i class="fas fa-heart"></i> for the open web</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loadingText">Extracting text...</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme Modal -->
+    <div class="theme-modal" id="themeModal">
+        <div class="theme-modal-content">
+            <h3><i class="fas fa-palette"></i> Choose Theme</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="dark">
+                    <div class="theme-preview dark"></div>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="light">
+                    <div class="theme-preview light"></div>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="blue">
+                    <div class="theme-preview blue"></div>
+                    <span>Blue</span>
+                </button>
+            </div>
+            <button class="btn secondary" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- Note: For real OCR functionality, you would need to include Tesseract.js -->
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/drag-drop.js"></script>
+    <script src="js/text-extractor.js"></script>
+    <!-- Optional: Tesseract.js for OCR -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v4.0.0/dist/tesseract.min.js"></script> -->
+</body>
+</html>
